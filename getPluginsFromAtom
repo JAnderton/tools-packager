@@ -1,0 +1,11 @@
+#!/bin/sh
+
+compress() {
+  cd ~/.atom/packages
+  for i in */; do zip -qr "${i%/}.zip" "$i"; done
+}
+
+cur_dir=$(pwd)
+mkdir atom-plugins
+compress
+mv ~/.atom/packages/*.zip $cur_dir/atom-plugins/

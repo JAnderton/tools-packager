@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -rf ~/.atom/packages/*
+for i in atom-plugins/*; do unzip -q $i -d ~/.atom/packages/; done
